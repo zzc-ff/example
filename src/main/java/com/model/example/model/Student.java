@@ -5,12 +5,12 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
 public class Student {
-    @NotBlank
+    @NotBlank(message = "姓名不能为空")
     private String name;
-    @Max(value = 120)
-    @Min(value = 1)
+    @Max(value = 120, message = "年龄太大，最大120")
+    @Min(value = 1, message = "年龄太小，最小一岁")
     private int age;
-    @NotBlank
+    @NotBlank(message = "性别不能为空")
     private String sex;
 
     public String getName() {
